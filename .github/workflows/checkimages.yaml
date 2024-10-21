@@ -16,6 +16,8 @@ jobs:
       - name: Check change
         run: |
           base=$(grep -Po '(?<=FROM )(.*)' Dockerfile)
+          debug=$(skopeo inspect "docker://$base" | jq .Digest --raw-output)
+          echo $debug
           skopeo inspect "docker://$base" | jq .Digest --raw-output > .baseimagedigest
           docker run --rm --entrypoint sh -u 0 quay.io/cloudservices/floorist-operator:latest -c \
             'dnf -y upgrade > /dev/null; rpm -qa | sort | sha256sum' \
@@ -27,7 +29,7 @@ jobs:
           git add .baseimagedigest
           git commit -m "chore(image): update base image" || echo "No new changes"
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v6
         with:
           title: 'chore(image): update base image'
           branch: automation/base-image
@@ -57,7 +59,7 @@ jobs:
           git add -A
           git commit -m "chore: update floorist image tag" || echo "No new changes"
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v6
         with:
           title: 'chore: update floorist image tag to latest'
           branch: automation/floorist-latest
