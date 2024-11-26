@@ -74,7 +74,7 @@
                 automountServiceAccountToken: false
                 containers:
                 - image:
-                    "{{ lookup('ansible.builtin.env', 'FLOORIST_IMAGE') | default('quay.io/cloudservices/floorist', True) }}\
+                    "{{ lookup('ansible.builtin.env', 'FLOORIST_IMAGE') | default('quay.io/redhat-services-prod/insights-management-tenant/insights-floorist/floorist', True) }}\
                     :{{ lookup('ansible.builtin.env', 'FLOORIST_IMAGE_TAG') | default('latest', True) }}"
                   imagePullPolicy: IfNotPresent
                   env:

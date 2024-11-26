@@ -46,7 +46,7 @@ jobs:
             | jq -r '.commit.sha' \
             | cut -c1-7)
           [[ "$tag" != "null" && "$tag" != "" ]]
-          skopeo inspect "docker://quay.io/cloudservices/floorist:$tag" > /dev/null
+          skopeo inspect "docker://quay.io/redhat-services-prod/insights-management-tenant/insights-floorist/floorist:$tag" > /dev/null
           sed -i "/name: FLOORIST_IMAGE_TAG/{n;s/value: .*/value: '$tag'/}" \
             config/templated/template_params.yaml
           make openshift-templates
