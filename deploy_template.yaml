@@ -68,7 +68,7 @@ objects:
                     description: Floorist Query definition.
                     properties:
                       chunksize:
-                        description: 
+                        description:
                         type: integer
                       prefix:
                         description: Valid folder path that will be created under
@@ -390,13 +390,13 @@ objects:
 parameters:
 - description: Operator image
   name: IMAGE
-  value: quay.io/cloudservices/floorist-operator
+  value: quay.io/redhat-services-prod/insights-management-tenant/insights-floorist/floorist-operator
 - description: Operator image tag
   name: IMAGE_TAG
   value: latest
 - description: Floorist exporter tool image
   name: FLOORIST_IMAGE
-  value: quay.io/cloudservices/floorist
+  value: quay.io/redhat-services-prod/insights-management-tenant/insights-floorist/floorist
 - description: Floorist exporter tool image tag
   name: FLOORIST_IMAGE_TAG
   value: 0dc5aa3
