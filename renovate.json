@@ -3,7 +3,7 @@
         "github>konflux-ci/mintmaker//config/renovate/renovate.json"
     ],
     "schedule": [
-        "* 3-10 * * 1"
+        "* 3-10 * * 1-5"
     ],
     "ignorePaths": [
       ".pre-commit-config.yaml"
