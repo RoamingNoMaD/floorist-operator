@@ -18,13 +18,13 @@
         "pinDigests": true,
         "packageRules": [
             {
-                "managers": ["dockerfile"],
-                "updateTypes": ["digest"],
+                "matchManagers": ["dockerfile"],
+                "matchUpdateTypes": ["digest"],
                 "enabled": true
             },
             {
-                "managers": ["dockerfile"],
-                "updateTypes": ["major", "minor", "patch"],
+                "matchManagers": ["dockerfile"],
+                "matchUpdateTypes": ["major", "minor", "patch"],
                 "enabled": false
             }
         ]
