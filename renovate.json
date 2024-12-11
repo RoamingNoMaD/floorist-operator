@@ -16,11 +16,6 @@
                 "matchManagers": ["dockerfile"],
                 "matchUpdateTypes": ["digest"],
                 "enabled": true
-            },
-            {
-                "matchManagers": ["dockerfile"],
-                "matchUpdateTypes": ["major", "minor", "patch"],
-                "enabled": false
             }
         ]
     }
