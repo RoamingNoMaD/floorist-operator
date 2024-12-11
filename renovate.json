@@ -10,11 +10,6 @@
     ],
     "dockerfile": {
         "enabled": true,
-        "postUpdateOptions": [
-            "echo {{{newValue}}} > .baseimagedigest",
-            "dnf -y install docker",
-            "docker run --rm --entrypoint sh -u 0 quay.io/redhat-services-prod/insights-management-tenant/insights-floorist/floorist-operator:latest -c 'dnf -y upgrade > /dev/null; rpm -qa | sort | sha256sum' >> .baseimagedigest"
-        ],
         "pinDigests": true,
         "packageRules": [
             {
