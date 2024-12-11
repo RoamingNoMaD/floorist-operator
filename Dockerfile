@@ -2,9 +2,6 @@ FROM registry.redhat.io/openshift4/ose-ansible-rhel9-operator:v4.17@sha256:89d31
 
 USER root
 
-RUN dnf -y upgrade && \
-    dnf -y clean all
-
 RUN curl -L --output oc.tar.gz \
  https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/latest/openshift-client-linux-amd64-rhel8.tar.gz && \
  tar -xvf oc.tar.gz oc && \
